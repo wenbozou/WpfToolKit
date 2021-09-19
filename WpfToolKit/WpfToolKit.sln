@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfToolKit", "WpfToolKit\Wp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfToolKitTest", "WpfToolKitTest\WpfToolKitTest.csproj", "{435BAEAC-DAF1-414F-AAF3-47F5AE6B5B51}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyWindowsService", "MyWindowsService\MyWindowsService.csproj", "{0D12EDEA-2769-4BD2-B4DC-5B31B28A64C4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{435BAEAC-DAF1-414F-AAF3-47F5AE6B5B51}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{435BAEAC-DAF1-414F-AAF3-47F5AE6B5B51}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{435BAEAC-DAF1-414F-AAF3-47F5AE6B5B51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D12EDEA-2769-4BD2-B4DC-5B31B28A64C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D12EDEA-2769-4BD2-B4DC-5B31B28A64C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D12EDEA-2769-4BD2-B4DC-5B31B28A64C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D12EDEA-2769-4BD2-B4DC-5B31B28A64C4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
