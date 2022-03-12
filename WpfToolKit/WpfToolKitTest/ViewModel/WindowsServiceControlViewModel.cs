@@ -13,7 +13,7 @@ namespace WpfToolKitTest.ViewModel
     public class WindowsServiceControlViewModel: PropertyChangedBase
     {
         #region 字段
-        string serviceFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\..\MyWindowsService\bin\Debug\MyWindowsService.exe");;
+        string serviceFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\..\MyWindowsService\bin\Debug\MyWindowsService.exe");
         string serviceName = "MyService";
         #endregion
 
@@ -23,8 +23,7 @@ namespace WpfToolKitTest.ViewModel
 
         #region 构造函数
         public WindowsServiceControlViewModel()
-        {
-        }
+        { }
         #endregion
 
         #region 命令

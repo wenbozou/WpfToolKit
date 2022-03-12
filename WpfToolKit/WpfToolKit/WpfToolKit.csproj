@@ -55,6 +55,7 @@
     <Compile Include="Core\INPC.cs" />
     <Compile Include="Core\RelayCommand.cs" />
     <Compile Include="Helper\FileHelper.cs" />
+    <Compile Include="Helper\LogHelper.cs" />
     <Compile Include="Helper\ThreadHelper.cs" />
     <Compile Include="Helper\WindowsServiceHelper.cs" />
     <Compile Include="StringRCConvert\StringRC.cs" />
