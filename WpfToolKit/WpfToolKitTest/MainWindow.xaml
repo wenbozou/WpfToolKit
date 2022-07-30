@@ -6,8 +6,12 @@
         xmlns:local="clr-namespace:WpfToolKitTest"
         xmlns:view="clr-namespace:WpfToolKitTest.View"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen"
+        Title="MainWindow" Height="700" Width="1100" 
+        WindowStartupLocation="CenterScreen"
+        Style="{StaticResource App.Window.Style.Main}"
         Loaded="Window_Loaded">
+    <Window.Resources>
+    </Window.Resources>
     <Grid>
         <Frame Name="MainPage" NavigationUIVisibility="Hidden" ScrollViewer.CanContentScroll="False" VerticalAlignment="Stretch" VerticalContentAlignment="top"/>
     </Grid>

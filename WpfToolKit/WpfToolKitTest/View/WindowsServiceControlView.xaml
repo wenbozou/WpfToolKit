@@ -26,5 +26,11 @@
                     Command="{Binding Path=DataContext.UninstallServiceCommand, ElementName=windowsServiceControlView}"/>
         </StackPanel>
 
+        <Border Grid.Column="1" Background="White" BorderBrush="#D24726" BorderThickness="0" CornerRadius="6" Margin="10" SnapsToDevicePixels="True">
+            <Border.Effect>
+                <DropShadowEffect Color="#D24726" ShadowDepth="0" BlurRadius="10" Opacity="0.3"/>
+            </Border.Effect>
+        </Border>
+
     </Grid>
 </Page>

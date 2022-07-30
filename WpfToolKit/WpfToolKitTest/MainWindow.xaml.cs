@@ -12,6 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfToolKit.Foundation.Interface;
+using WpfToolKit.Foundation.Model;
+using WpfToolKit.Services;
 using WpfToolKitTest.View;
 
 namespace WpfToolKitTest
@@ -33,6 +36,12 @@ namespace WpfToolKitTest
 
 
             MainPage.Content = new WindowsServiceControlView();
+
+            IRegistryService registryService = RegistryService.GetInstance();
+
+            //registryService.AddRegistryKey(RootKey.LOCAL_MACHINE, @"SOFTWARE\Tenorshare", "Test", "12");
+
+
         }
 
 
