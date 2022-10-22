@@ -13,38 +13,22 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WpfToolKitTest.ViewModel;
+using WpfToolKitTest.ViewModel.ServiceTest;
 
-namespace WpfToolKitTest.View
+namespace WpfToolKitTest.View.ServiceTest
 {
     /// <summary>
     /// WindowsServiceControlView.xaml 的交互逻辑
     /// </summary>
     public partial class WindowsServiceControlView : Page
     {
+        private WindowsServiceControlViewModel _ViewModel = null;
+
         public WindowsServiceControlView()
         {
             InitializeComponent();
-            this.DataContext = new WindowsServiceControlViewModel();
-        }
-
-        private void InstallService_Clicked(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void StartService_Clicked(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void StopService_Clicked(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void UninstallService_Clicked(object sender, RoutedEventArgs e)
-        {
-
+            _ViewModel = new WindowsServiceControlViewModel();
+            this.DataContext = _ViewModel;
         }
     }
 }

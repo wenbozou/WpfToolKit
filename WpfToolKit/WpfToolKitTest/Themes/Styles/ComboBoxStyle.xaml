@@ -10,7 +10,7 @@
             <Border Name="Part_itemBorder" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="Red" Background="LightBlue" Height="40">
                 <!--<ContentPresenter Name="Part_contentShow" Margin="{TemplateBinding Padding}" VerticalAlignment="Center" HorizontalAlignment="Left"/>-->
                 <StackPanel Orientation="Horizontal">
-                    <Image Name="Part_image" Width="30" Height="30" Source="pack://application:,,,/WpfToolKitTest;component/Themes/Images/cbb_item_unSelect.png"/>
+                    <Image Name="Part_image" Width="20" Height="20" Source="pack://application:,,,/WpfToolKitTest;component/Themes/Images/cbb_item_unSelect.png"/>
                     <TextBlock Text="{Binding Name}" Margin="10 0 0 0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 </StackPanel>
             </Border>

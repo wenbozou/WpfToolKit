@@ -8,9 +8,9 @@ using WpfToolKit.Command;
 using WpfToolKit.Core;
 using WpfToolKit.Helper;
 
-namespace WpfToolKitTest.ViewModel
+namespace WpfToolKitTest.ViewModel.ServiceTest
 {
-    public class WindowsServiceControlViewModel: PropertyChangedBase
+    public class WindowsServiceControlViewModel : PropertyChangedBase
     {
         #region 字段
         string serviceFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\..\MyWindowsService\bin\Debug\MyWindowsService.exe");
@@ -18,7 +18,15 @@ namespace WpfToolKitTest.ViewModel
         #endregion
 
         #region 属性
-
+        private string _Descriptor = string.Empty;
+        public string Descriptor
+        {
+            get { return _Descriptor; }
+            set {
+                _Descriptor = value;
+                NotifyOfPropertyChange("Descriptor");
+            }
+        }
         #endregion
 
         #region 构造函数
@@ -35,7 +43,7 @@ namespace WpfToolKitTest.ViewModel
                 {
                     Task.Run(() =>
                     {
-                        //ShowMessage("开始安装服务...");
+                        Descriptor = "开始安装服务...";
                         if (WindowsServiceHelper.IsServiceExisted(serviceName))
                         {
                             WindowsServiceHelper.UninstallService(serviceFilePath);
@@ -53,11 +61,11 @@ namespace WpfToolKitTest.ViewModel
                 {
                     Task.Run(() =>
                     {
-                        //ShowMessage("服务正在启动...");
+                        Descriptor = "服务正在启动...";
                         if (WindowsServiceHelper.IsServiceExisted(serviceName))
                         {
                             WindowsServiceHelper.ServiceStart(serviceName);
-                            //ShowMessage("服务已启动");
+                            Descriptor = "服务已启动";
                         }
 
                     });
@@ -72,11 +80,11 @@ namespace WpfToolKitTest.ViewModel
                 {
                     Task.Run(() =>
                     {
-                        //ShowMessage("服务正在停止...");
+                        Descriptor = "服务正在停止...";
                         if (WindowsServiceHelper.IsServiceExisted(serviceName))
                         {
                             WindowsServiceHelper.ServiceStop(serviceName);
-                            //ShowMessage("服务已停止");
+                            Descriptor = "服务已停止";
                         }
                     });
                 });
@@ -90,12 +98,13 @@ namespace WpfToolKitTest.ViewModel
                 {
                     Task.Run(() =>
                     {
-                        //ShowMessage("开始卸载服务...");
+                        Descriptor = "开始卸载服务...";
                         if (WindowsServiceHelper.IsServiceExisted(serviceName))
                         {
                             WindowsServiceHelper.ServiceStop(serviceName);
                         }
                         WindowsServiceHelper.UninstallService(serviceFilePath);
+                        Descriptor = "完成卸载服务";
                     });
                 });
             }

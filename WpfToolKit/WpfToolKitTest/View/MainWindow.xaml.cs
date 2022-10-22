@@ -17,32 +17,28 @@ using WpfToolKit.Foundation.Model;
 using WpfToolKit.Services;
 using WpfToolKitTest.View;
 using WpfToolKitTest.View.MoreTools;
+using WpfToolKitTest.ViewModel;
 
-namespace WpfToolKitTest
+namespace WpfToolKitTest.View
 {
     /// <summary>
     /// MainWindow.xaml 的交互逻辑
     /// </summary>
     public partial class MainWindow : Window
     {
+        private MainWindowViewModel _ViewModel = null;
         public MainWindow()
         {
             InitializeComponent();
+            _ViewModel = new MainWindowViewModel();
+            this.DataContext = _ViewModel;
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             //string filePath = @"G:\SourceCode\WpfToolKit\WpfToolKit\WpfToolKitTest\Language\en.xaml";
-            //ParseLanguageRC(filePath);
-
-
-            //MainPage.Content = new WindowsServiceControlView();
-            //IRegistryService registryService = RegistryService.GetInstance();
-
-            //registryService.AddRegistryKey(RootKey.LOCAL_MACHINE, @"SOFTWARE\Tenorshare", "Test", "12");
-
-
-            MainPage.Content = new MoreToolsView();
+            //ParseLanguageRC(filePath);            
+            this._ViewModel.OnViewLoaded(this);
         }
 
 
