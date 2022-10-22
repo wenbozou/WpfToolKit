@@ -38,7 +38,7 @@
                                 <Button Content="Moudle2" Width="80" Height="48" Margin="10"/>
                                 <Button Content="Moudle3" Width="80" Height="48" Margin="10"/>
                                 <Button Content="Moudle4" Width="80" Height="48" Margin="10"/>
-                                <Button Content="Moudle5" Width="80" Height="48" Margin="10"/>
+                                <Button Content="MoreTools" Width="80" Height="48" Margin="10"/>
                             </StackPanel>
 
                             <ContentPresenter Grid.Row="1" Grid.Column="1"/>

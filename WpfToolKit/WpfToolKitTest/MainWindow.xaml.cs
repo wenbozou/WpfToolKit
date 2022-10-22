@@ -16,6 +16,7 @@ using WpfToolKit.Foundation.Interface;
 using WpfToolKit.Foundation.Model;
 using WpfToolKit.Services;
 using WpfToolKitTest.View;
+using WpfToolKitTest.View.MoreTools;
 
 namespace WpfToolKitTest
 {
@@ -35,13 +36,13 @@ namespace WpfToolKitTest
             //ParseLanguageRC(filePath);
 
 
-            MainPage.Content = new WindowsServiceControlView();
-
-            IRegistryService registryService = RegistryService.GetInstance();
+            //MainPage.Content = new WindowsServiceControlView();
+            //IRegistryService registryService = RegistryService.GetInstance();
 
             //registryService.AddRegistryKey(RootKey.LOCAL_MACHINE, @"SOFTWARE\Tenorshare", "Test", "12");
 
 
+            MainPage.Content = new MoreToolsView();
         }
 
 

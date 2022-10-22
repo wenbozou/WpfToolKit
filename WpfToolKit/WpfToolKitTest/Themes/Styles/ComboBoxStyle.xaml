@@ -1,0 +1,79 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:WpfToolKitTest.Themes.Styles">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/WpfToolKitTest;component/Themes/Svgs/ImageSvg.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+
+    <ControlTemplate x:Key="Style.App.ComboBoxItem" TargetType="{x:Type ComboBoxItem}">
+        <Grid Background="{TemplateBinding Background}">
+            <Border Name="Part_itemBorder" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="Red" Background="LightBlue" Height="40">
+                <!--<ContentPresenter Name="Part_contentShow" Margin="{TemplateBinding Padding}" VerticalAlignment="Center" HorizontalAlignment="Left"/>-->
+                <StackPanel Orientation="Horizontal">
+                    <Image Name="Part_image" Width="30" Height="30" Source="pack://application:,,,/WpfToolKitTest;component/Themes/Images/cbb_item_unSelect.png"/>
+                    <TextBlock Text="{Binding Name}" Margin="10 0 0 0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </StackPanel>
+            </Border>
+        </Grid>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter TargetName="Part_itemBorder" Property="Background" Value="Gray"/>
+                <Setter TargetName="Part_itemBorder" Property="BorderBrush" Value="Blue"/>
+            </Trigger>
+            <Trigger Property="IsSelected" Value="True">
+                <Setter TargetName="Part_image" Property="Source" Value="pack://application:,,,/WpfToolKitTest;component/Themes/Images/cbb_item_selected.png"/>
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="Style.App.ToggleButton" TargetType="{x:Type ToggleButton}">
+        <Border Name="Part_Border" Background="AliceBlue" BorderThickness="1" BorderBrush="Transparent">
+            <Path Name="Part_Path" Fill="Red" Height="10" Width="10" Data="M5,5 L10,10 L15,5 z" Stretch="Fill"/>
+        </Border>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter TargetName="Part_Path" Property="Fill" Value="Green"/>
+                <Setter TargetName="Part_Border" Property="Background" Value="White"/>
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+    <Style x:Key="Style.App.ComboBox" TargetType="{x:Type ComboBox}">
+        <Setter Property="ItemContainerStyle">
+            <Setter.Value>
+                <Style TargetType="ComboBoxItem">
+                    <Setter Property="FontSize" Value="30"/>
+                    <Setter Property="Foreground" Value="Blue"/>
+                    <Setter Property="Template" Value="{StaticResource Style.App.ComboBoxItem}"/>
+                </Style>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ComboBox}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="7*"/>
+                            <ColumnDefinition Width="3*" MaxWidth="20"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Border BorderBrush="Blue" BorderThickness="1 1 0 1" Background="AliceBlue">
+                            <TextBox x:Name="Part_Txt" Text="{TemplateBinding Text}" Background="Transparent" BorderThickness="0" VerticalContentAlignment="Center" FontSize="14" FontWeight="Bold" Foreground="Red"/>
+                        </Border>
+                        <Border Grid.Column="1" BorderBrush="Red" BorderThickness="1">
+                            <ToggleButton IsChecked="{Binding Path=IsDropDownOpen,Mode=TwoWay, RelativeSource={RelativeSource Mode=TemplatedParent}}" ClickMode="Press"
+                                          Template="{StaticResource Style.App.ToggleButton}"/>
+                        </Border>
+                        <Popup x:Name="Part_Popup" IsOpen="{TemplateBinding IsDropDownOpen}" Placement="Bottom">
+                            <Border MinWidth="{TemplateBinding ActualWidth}" MaxHeight="{TemplateBinding MaxDropDownHeight}">
+                                <ScrollViewer MaxHeight="{TemplateBinding MaxDropDownHeight}" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+                                    <StackPanel Background="AliceBlue" IsItemsHost="True"/>
+                                </ScrollViewer>
+                            </Border>
+                        </Popup>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

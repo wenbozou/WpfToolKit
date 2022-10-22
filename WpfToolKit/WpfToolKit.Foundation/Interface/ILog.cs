@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace WpfToolKit.Foundation.Interface
 {
-    interface ILog
+    public interface ILog
     {
+        bool Init(string fullPath);
+        bool Init(string dirPath, string fileName);
         void WriteLog(string format, string arg);
         void WriteExceptionLog(string format, Exception ex);
     }

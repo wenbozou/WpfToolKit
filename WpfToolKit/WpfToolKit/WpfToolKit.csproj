@@ -58,6 +58,7 @@
     <Compile Include="Helper\LogHelper.cs" />
     <Compile Include="Helper\ThreadHelper.cs" />
     <Compile Include="Helper\WindowsServiceHelper.cs" />
+    <Compile Include="Services\LogService.cs" />
     <Compile Include="Services\RegistryService.cs" />
     <Compile Include="StringRCConvert\StringRC.cs" />
     <Compile Include="StringRCConvert\StringRCConverter.cs" />

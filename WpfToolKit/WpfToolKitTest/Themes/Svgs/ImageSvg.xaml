@@ -1,0 +1,9 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:WpfToolKitTest.Themes.Svgs">
+
+    <PathGeometry x:Key="img_svg_selectd">
+        M512 0C231.747368 0 0 231.747368 0 512S231.747368 1024 512 1024 1024 792.252632 1024 512 792.252632 0 512 0z m0 970.105263C258.694737 970.105263 53.894737 765.305263 53.894737 512S258.694737 53.894737 512 53.894737 970.105263 258.694737 970.105263 512 765.305263 970.105263 512 970.105263z
+        
+    </PathGeometry>
+</ResourceDictionary>

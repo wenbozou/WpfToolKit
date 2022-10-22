@@ -70,7 +70,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Models\MoreTools\CbbData.cs" />
+    <Compile Include="ViewModel\MoreTools\MoreToolsViewModel.cs" />
     <Compile Include="ViewModel\WindowsServiceControlViewModel.cs" />
+    <Compile Include="View\MoreTools\MoreToolsView.xaml.cs">
+      <DependentUpon>MoreToolsView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\WindowsServiceControlView.xaml.cs">
       <DependentUpon>WindowsServiceControlView.xaml</DependentUpon>
     </Compile>
@@ -90,7 +95,19 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Themes\Styles\ComboBoxStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Themes\Styles\WindowStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Svgs\ImageSvg.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MoreTools\MoreToolsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -128,7 +145,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Helpers\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WpfToolKit.Foundation\WpfToolKit.Foundation.csproj">
@@ -139,6 +155,10 @@
       <Project>{faf0c08a-b9a0-4073-b540-1d6fe44e093d}</Project>
       <Name>WpfToolKit</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Themes\Images\cbb_item_selected.png" />
+    <Resource Include="Themes\Images\cbb_item_unSelect.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
