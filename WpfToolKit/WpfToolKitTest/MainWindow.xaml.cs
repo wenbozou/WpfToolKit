@@ -54,5 +54,13 @@ namespace WpfToolKitTest
             //while ((line = sr.ReadLine()) != null)
             //    lstLine.Add(line);
         }
+
+        private void Window_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed)
+            {
+                this.DragMove();
+            }
+        }
     }
 }

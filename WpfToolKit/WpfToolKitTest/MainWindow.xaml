@@ -7,12 +7,13 @@
         xmlns:view="clr-namespace:WpfToolKitTest.View"
         mc:Ignorable="d"
         Title="MainWindow" Height="700" Width="1100" 
+        Style="{StaticResource Style.App.Window.Main}"
         WindowStartupLocation="CenterScreen"
-        Style="{StaticResource App.Window.Style.Main}"
-        Loaded="Window_Loaded">
+        Loaded="Window_Loaded"
+        MouseMove="Window_MouseMove">
     <Window.Resources>
     </Window.Resources>
     <Grid>
-        <Frame Name="MainPage" NavigationUIVisibility="Hidden" ScrollViewer.CanContentScroll="False" VerticalAlignment="Stretch" VerticalContentAlignment="top"/>
+        <Frame Name="MainPage" NavigationUIVisibility="Hidden" ScrollViewer.CanContentScroll="False" VerticalAlignment="Stretch" VerticalContentAlignment="top" Margin="0 20 0 0"/>
     </Grid>
 </Window>
