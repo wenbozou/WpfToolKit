@@ -1,5 +1,6 @@
 ﻿using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
+using GalaSoft.MvvmLight.Threading;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -49,6 +50,8 @@ namespace WpfToolKitTest.ViewModel.MoreTools
                 cbbData.Name = "test" + (i + 1).ToString();
                 _CbbDatas.Add(cbbData);
             }
+
+            DispatcherHelper.Initialize();
         }
 
 
@@ -60,14 +63,16 @@ namespace WpfToolKitTest.ViewModel.MoreTools
         #region
         private void AddItemCommandImpl()
         {
-            if (_CbbDatas != null)
-            {
-                int nCount = _CbbDatas.Count;
-                CbbData cbbData = new CbbData();
-                cbbData.ID = (nCount).ToString();
-                cbbData.Name = "test" + (nCount).ToString();
-                _CbbDatas.Add(cbbData);
-            }
+            DispatcherHelper.CheckBeginInvokeOnUI(() => {
+                if (_CbbDatas != null)
+                {
+                    int nCount = _CbbDatas.Count;
+                    CbbData cbbData = new CbbData();
+                    cbbData.ID = (nCount).ToString();
+                    cbbData.Name = "test" + (nCount).ToString();
+                    _CbbDatas.Add(cbbData);
+                }
+            });
         }
         #endregion
     }

@@ -45,7 +45,7 @@ namespace WpfToolKitTest.ViewModel
         }
         private void ServiceStartTestCommandImpl()
         {
-            if (_ActiveFrame != null)
+            if (_ActiveFrame != null && !(_ActiveFrame.Content is WindowsServiceControlView))
             {
                 _ActiveFrame.Content = new WindowsServiceControlView();
             }
@@ -55,7 +55,7 @@ namespace WpfToolKitTest.ViewModel
         }
         private void MoreToolsCommandImpl()
         {
-            if (_ActiveFrame != null)
+            if (_ActiveFrame != null && !(_ActiveFrame.Content is MoreToolsView))
             {
                 _ActiveFrame.Content = new MoreToolsView();
             }
