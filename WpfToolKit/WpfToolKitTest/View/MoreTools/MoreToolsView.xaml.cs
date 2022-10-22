@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WpfToolKitTest.Models.MoreTools;
+using WpfToolKitTest.ViewModel.MoreTools;
 
 namespace WpfToolKitTest.View.MoreTools
 {
@@ -21,24 +22,12 @@ namespace WpfToolKitTest.View.MoreTools
     /// </summary>
     public partial class MoreToolsView : Page
     {
+        private MoreToolsViewModel _ViewModel = null;
         public MoreToolsView()
         {
             InitializeComponent();
-
-            List<CbbData> cbbDatas = new List<CbbData>();
-            CbbData cbbData1 = new CbbData();
-            cbbData1.ID = "";
-            cbbData1.Name = "请选择";
-            cbbDatas.Add(cbbData1);
-            for (int i = 0; i < 20; i++)
-            {
-                CbbData cbbData = new CbbData();
-                cbbData.ID = (i + 1).ToString();
-                cbbData.Name = "test" + (i + 1).ToString();
-                cbbDatas.Add(cbbData);
-            }
-
-            myCbb.ItemsSource = cbbDatas;
+            _ViewModel = new MoreToolsViewModel();
+            this.DataContext = _ViewModel;
         }
     }
 }

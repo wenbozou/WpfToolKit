@@ -15,6 +15,11 @@
         </ResourceDictionary>
     </Page.Resources>
     <Grid>
-        <ComboBox x:Name="myCbb" Width="240" Height="20" Style="{StaticResource Style.App.ComboBox}" DisplayMemberPath="Name" SelectedValuePath="ID" SelectedIndex="0"/>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <ComboBox Name="myCbb" Width="240" Height="20" Style="{StaticResource Style.App.ComboBox}" DisplayMemberPath="Name" SelectedValuePath="ID" SelectedIndex="0" 
+                  ItemsSource="{Binding CbbDatas}"/>
+            <Button Content="Add" Height="20" Command="{Binding AddItemCommand, Mode=OneWay}"/>
+        </StackPanel>
+
     </Grid>
 </Page>

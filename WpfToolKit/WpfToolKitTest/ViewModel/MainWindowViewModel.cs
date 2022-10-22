@@ -30,11 +30,19 @@ namespace WpfToolKitTest.ViewModel
         #endregion
 
         #region UI 绑定的 Command
+        public RelayCommand CloseCommand => new RelayCommand(CloseCommandImpl);
         public RelayCommand ServiceStartTestCommand => new RelayCommand(ServiceStartTestCommandImpl);
         public RelayCommand MoreToolsCommand => new RelayCommand(MoreToolsCommandImpl);
         #endregion
 
         #region Command 执行的方法
+        private void CloseCommandImpl()
+        {
+            if (_ActiveView != null)
+            {
+                _ActiveView.Close();
+            }
+        }
         private void ServiceStartTestCommandImpl()
         {
             if (_ActiveFrame != null)
