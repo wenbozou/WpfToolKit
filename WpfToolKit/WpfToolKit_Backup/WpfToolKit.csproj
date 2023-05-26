@@ -4,8 +4,8 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{FE29EB3C-8367-4947-8C91-1268328E4368}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <ProjectGuid>{FAF0C08A-B9A0-4073-B540-1D6FE44E093D}</ProjectGuid>
+    <OutputType>library</OutputType>
     <RootNamespace>WpfToolKit</RootNamespace>
     <AssemblyName>WpfToolKit</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
@@ -15,17 +15,15 @@
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\bin\Debug\</OutputPath>
+    <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -35,7 +33,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Data" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -50,23 +51,23 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <ApplicationDefinition Include="App.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </ApplicationDefinition>
-    <Page Include="Views\MainWindowView.xaml">
+    <Compile Include="Core\CommandBase.cs" />
+    <Compile Include="Core\INPC.cs" />
+    <Compile Include="Core\RelayCommand.cs" />
+    <Compile Include="Helper\FileHelper.cs" />
+    <Compile Include="Helper\ListViewSelectionHelper.cs" />
+    <Compile Include="Helper\LogHelper.cs" />
+    <Compile Include="Helper\PEInfo.cs" />
+    <Compile Include="Helper\ThreadHelper.cs" />
+    <Compile Include="Helper\WindowsServiceHelper.cs" />
+    <Compile Include="Services\LogService.cs" />
+    <Compile Include="Services\RegistryService.cs" />
+    <Compile Include="StringRCConvert\StringRC.cs" />
+    <Compile Include="StringRCConvert\StringRCConverter.cs" />
+    <Page Include="Themes\Generic.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Compile Include="App.xaml.cs">
-      <DependentUpon>App.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="ViewModels\MainWindowViewModel.cs" />
-    <Compile Include="Views\MainWindowView.xaml.cs">
-      <DependentUpon>MainWindowView.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -92,10 +93,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\" />
+    <ProjectReference Include="..\WpfToolKit.Foundation\WpfToolKit.Foundation.csproj">
+      <Project>{79a8437c-5ac5-4e94-bbce-91ac4c3e11cc}</Project>
+      <Name>WpfToolKit.Foundation</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
