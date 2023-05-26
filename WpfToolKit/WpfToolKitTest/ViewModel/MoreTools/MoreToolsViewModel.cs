@@ -4,6 +4,7 @@ using GalaSoft.MvvmLight.Threading;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -73,6 +74,17 @@ namespace WpfToolKitTest.ViewModel.MoreTools
                     _CbbDatas.Add(cbbData);
                 }
             });
+
+            //string filePath = @"C:\Program Files (x86)\Tenorshare\Tenorshare iCareFone\RegisterAndLog.dll";
+            string filePath = @"G:\SourceCode\WpfToolKit\WpfToolKit\WpfToolKitTest\bin\Debug\WpfToolKit1.dll";
+            PEInfos(filePath);
+        }
+
+
+        private void PEInfos(string filePath)
+        {
+            WpfToolKit.Helper.PeInfo peInfo = new WpfToolKit.Helper.PeInfo(filePath);
+            var dt = peInfo.GetPETable();
         }
         #endregion
     }

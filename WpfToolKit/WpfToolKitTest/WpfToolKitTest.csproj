@@ -19,7 +19,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>..\..\bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -151,10 +151,6 @@
     <ProjectReference Include="..\WpfToolKit.Foundation\WpfToolKit.Foundation.csproj">
       <Project>{79a8437c-5ac5-4e94-bbce-91ac4c3e11cc}</Project>
       <Name>WpfToolKit.Foundation</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\WpfToolKit\WpfToolKit.csproj">
-      <Project>{faf0c08a-b9a0-4073-b540-1d6fe44e093d}</Project>
-      <Name>WpfToolKit</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

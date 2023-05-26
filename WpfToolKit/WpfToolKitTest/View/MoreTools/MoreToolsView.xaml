@@ -4,6 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:WpfToolKitTest.View.MoreTools"
+      xmlns:WTK.Helper="clr-namespace:WpfToolKit.Helper;assembly=WpfToolKit"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="MoreToolsView">
@@ -15,11 +16,32 @@
         </ResourceDictionary>
     </Page.Resources>
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
             <ComboBox Name="myCbb" Width="240" Height="20" Style="{StaticResource Style.App.ComboBox}" DisplayMemberPath="Name" SelectedValuePath="ID" SelectedIndex="0" 
-                  ItemsSource="{Binding CbbDatas}"/>
+                  ItemsSource="{Binding CbbDatas}" IsReadOnly="True"/>
             <Button Content="Add" Height="20" Command="{Binding AddItemCommand, Mode=OneWay}"/>
         </StackPanel>
+
+        <ListView Grid.Column="1" Margin="0 10 0 10" WTK.Helper:ListViewSelectionHelper.MultiSelect="True" WTK.Helper:ListViewSelectionHelper.PreviewDrag="True">
+            <ListBoxItem Content="1" />
+            <ListBoxItem Content="1" />
+            <ListBoxItem Content="1" />
+            <ListBoxItem Content="1" />
+            <ListBoxItem Content="1" />
+            <ListBoxItem Content="1" />
+            <ListBoxItem Content="1" />
+            <ListBoxItem Content="1" />
+            <ListBoxItem Content="1" />
+            <ListBoxItem Content="1" />
+            <ListBoxItem Content="1" />
+            <ListBoxItem Content="1" />
+
+        </ListView>
 
     </Grid>
 </Page>

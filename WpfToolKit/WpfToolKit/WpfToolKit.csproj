@@ -55,7 +55,9 @@
     <Compile Include="Core\INPC.cs" />
     <Compile Include="Core\RelayCommand.cs" />
     <Compile Include="Helper\FileHelper.cs" />
+    <Compile Include="Helper\ListViewSelectionHelper.cs" />
     <Compile Include="Helper\LogHelper.cs" />
+    <Compile Include="Helper\PEInfo.cs" />
     <Compile Include="Helper\ThreadHelper.cs" />
     <Compile Include="Helper\WindowsServiceHelper.cs" />
     <Compile Include="Services\LogService.cs" />
@@ -66,9 +68,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Compile Include="CustomControl1.cs">
-      <SubType>Code</SubType>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">

@@ -56,7 +56,7 @@ namespace WpfToolKitTest.View
         {
             if (e.LeftButton == MouseButtonState.Pressed)
             {
-                this.DragMove();
+                //this.DragMove();
             }
         }
     }
