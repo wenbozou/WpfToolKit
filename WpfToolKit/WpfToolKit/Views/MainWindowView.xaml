@@ -33,12 +33,18 @@
                                 Width="24" Height="24" 
                                 Margin="0 0 6 0"
                                 Style="{StaticResource Style.App.Button.Close}"
-                                Tag="{DynamicResource PathGeo.Btn.Max}"
+                                Tag="{DynamicResource PathGeo.App.Btn.Min}"
+                                Command="{Binding DataContext.MinWindowCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorLevel=1, AncestorType={x:Type ctrllib.controls:ModernWindow}}}"/>
+                            <ctrllib.controls:ModernButton 
+                                Width="24" Height="24" 
+                                Margin="0 0 6 0"
+                                Style="{StaticResource Style.App.Button.Close}"
+                                Tag="{DynamicResource PathGeo.App.Btn.Max}"
                                 Command="{Binding DataContext.MaxNormalWindowCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorLevel=1, AncestorType={x:Type ctrllib.controls:ModernWindow}}}"/>
                             <ctrllib.controls:ModernButton 
                                 Width="24" Height="24" 
                                 Style="{StaticResource Style.App.Button.Close}"
-                                Tag="{DynamicResource PathGeo.Btn.Close}"
+                                Tag="{DynamicResource PathGeo.App.Btn.Close}"
                                 Command="{Binding DataContext.CloseWindowCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorLevel=1, AncestorType={x:Type ctrllib.controls:ModernWindow}}}"/>
                         </StackPanel>
                     </Grid>

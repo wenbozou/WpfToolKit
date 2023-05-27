@@ -27,6 +27,15 @@ namespace WpfToolKit.ViewModels
         #endregion
 
         #region 命令
+        public RelayCommand<object> MinWindowCommand => new RelayCommand<object>(MinWindowCommandImpl);
+        private void MinWindowCommandImpl(object param)
+        {
+            if (App.Current.MainWindow.WindowState != System.Windows.WindowState.Minimized)
+            {
+                App.Current.MainWindow.WindowState = System.Windows.WindowState.Minimized;
+            }
+        }
+
         public RelayCommand<object> MaxNormalWindowCommand => new RelayCommand<object>(MaxNormalWindowCommandImpl);
         private void MaxNormalWindowCommandImpl(object param)
         {
@@ -38,7 +47,6 @@ namespace WpfToolKit.ViewModels
             {
                 App.Current.MainWindow.WindowState = System.Windows.WindowState.Normal;
             }
-
         }
         public RelayCommand<object> CloseWindowCommand => new RelayCommand<object>(CloseWindowCommandImpl);
 
