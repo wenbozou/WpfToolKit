@@ -11,6 +11,21 @@ namespace WpfToolKit.ViewModels
 {
     public class MainWindowViewModel : ViewModelBase
     {
+        #region 属性
+
+
+        private string _ProductName="WpfToolKit";
+
+        public string ProductName
+        {
+            get { return _ProductName; }
+            set {
+                _ProductName = value;
+                RaisePropertyChanged();
+            }
+        }
+        #endregion
+
         #region 命令
         public RelayCommand<object> MaxNormalWindowCommand => new RelayCommand<object>(MaxNormalWindowCommandImpl);
         private void MaxNormalWindowCommandImpl(object param)

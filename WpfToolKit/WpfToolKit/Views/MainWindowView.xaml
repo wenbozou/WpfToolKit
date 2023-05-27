@@ -11,9 +11,7 @@
     WindowStartupLocation="CenterScreen"
     Style="{StaticResource Style.App.Window.Main}"
     TitleAreaTemplate="{DynamicResource DT.Window.TitleArea}"
-    PreviewMouseLeftButtonDown="ModernWindow_PreviewMouseLeftButtonDown"
-    PreviewMouseMove="ModernWindow_PreviewMouseMove"
-    PreviewMouseLeftButtonUp="ModernWindow_PreviewMouseLeftButtonUp">
+    MouseMove="ModernWindow_MouseMove">
     <ctrllib.controls:ModernWindow.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -28,7 +26,8 @@
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="Auto"/>
                         </Grid.ColumnDefinitions>
-                        <TextBlock Text="WpfToolKit" Margin="10"/>
+                        <TextBlock Text="{Binding DataContext.ProductName, RelativeSource={RelativeSource Mode=FindAncestor, AncestorLevel=1, AncestorType={x:Type ctrllib.controls:ModernWindow}}}"
+                                   Margin="10"/>
                         <StackPanel Orientation="Horizontal" Grid.Column="2" Margin="0 0 20 0">
                             <ctrllib.controls:ModernButton 
                                 Width="24" Height="24" 
