@@ -43,6 +43,7 @@ namespace WpfToolKit.ViewModel
             ////}
 
             SimpleIoc.Default.Register<MainWindowViewModel>();
+            SimpleIoc.Default.Register<StartUpViewModel>();
         }
 
         public MainWindowViewModel Main
@@ -52,7 +53,15 @@ namespace WpfToolKit.ViewModel
                 return ServiceLocator.Current.GetInstance<MainWindowViewModel>();
             }
         }
-        
+
+        public StartUpViewModel Startup
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<StartUpViewModel>();
+            }
+        }
+
         public static void Cleanup()
         {
             // TODO Clear the ViewModels

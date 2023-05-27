@@ -7,8 +7,9 @@
         mc:Ignorable="d"
         Title="StartUpView" Height="450" Width="800"
         WindowStartupLocation="CenterScreen"
-        Loaded="Window_Loaded">
-    <Grid>
-        
+        Loaded="Window_Loaded"
+        DataContext="{Binding Source={StaticResource Locator}, Path=Startup}">
+    <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+        <TextBlock Text="{Binding Introduce}"/>
     </Grid>
 </Window>
