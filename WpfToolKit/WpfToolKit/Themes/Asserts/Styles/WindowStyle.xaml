@@ -3,6 +3,9 @@
                     xmlns:local="clr-namespace:WpfToolKit.Themes.Asserts.Styles"
                     xmlns:shell="http://schemas.microsoft.com/winfx/2006/xaml/presentation/shell"
                     xmlns:ctrllib.controls="clr-namespace:WpfToolKit.CtrlLib.Controls;assembly=WpfToolKit.CtrlLib">
+    <ResourceDictionary.MergedDictionaries>
+        
+    </ResourceDictionary.MergedDictionaries>
 
     <Style x:Key="Style.App.Window.Main" TargetType="{x:Type ctrllib.controls:ModernWindow}">
         <Setter Property="Height" Value="700"/>
@@ -28,7 +31,7 @@
                         CornerRadius="10" 
                         SnapsToDevicePixels="True">
                         <Border.Effect>
-                            <DropShadowEffect BlurRadius="10" Direction="-90" ShadowDepth="0" Opacity="0.4" Color="Gray"/>
+                            <DropShadowEffect BlurRadius="10" Direction="90" ShadowDepth="0" Opacity="0.4" Color="Gray"/>
                         </Border.Effect>
                         <Border
                             BorderBrush="{TemplateBinding BorderBrush}"
@@ -42,21 +45,24 @@
                                     <ColumnDefinition Width="Auto"/>
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
-                                <Grid  Grid.Column="0" Grid.ColumnSpan="2" Height="42">
+                                <Grid  Grid.Column="0" Grid.ColumnSpan="2" Height="60">
                                     <ContentControl 
                                         shell:WindowChrome.IsHitTestVisibleInChrome="True"
                                         ContentTemplate="{TemplateBinding TitleAreaTemplate}"/>
                                 </Grid>
-                                <Border Grid.Row="1" Grid.Column="0" Background="Green"
-                                        BorderBrush="{TemplateBinding BorderBrush}"
-                                        BorderThickness="{TemplateBinding BorderThickness}"
-                                        CornerRadius="0 0 0 10">
+                                <Border Grid.Row="1" Grid.Column="0"
+                                        BorderBrush="#E0E0E0"
+                                        BorderThickness="0 0 1 0"
+                                        CornerRadius="0 0 0 10"
+                                        Width="120">
                                     <StackPanel Orientation="Vertical" >
-                                        <RadioButton Content="Moudle1" Width="80" Height="48"/>
-                                        <RadioButton Content="Moudle2" Width="80" Height="48"/>
-                                        <RadioButton Content="Moudle3" Width="80" Height="48"/>
-                                        <RadioButton Content="Service Test" Width="80" Height="48" Command="{Binding DataContext.ServiceStartTestCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorLevel=1, AncestorType={x:Type Window}}}"/>
-                                        <RadioButton Content="MoreTools" Width="80" Height="48" Margin="10" Command="{Binding DataContext.MoreToolsCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorLevel=1, AncestorType={x:Type Window}}}"/>
+                                        <ctrllib.controls:ModernRadioButton Content="Moudle1" MinWidth="80" Height="32" Style="{DynamicResource Style.App.RadioButton.Normal}"/>
+                                        <ctrllib.controls:ModernRadioButton Content="Moudle2" MinWidth="80" Height="32" Style="{DynamicResource Style.App.RadioButton.Normal}"/>
+                                        <ctrllib.controls:ModernRadioButton Content="Moudle3" MinWidth="80" Height="32" Style="{DynamicResource Style.App.RadioButton.Normal}"/>
+                                        <ctrllib.controls:ModernRadioButton Content="MoreTools" MinWidth="80" Height="32" Style="{DynamicResource Style.App.RadioButton.Normal}"
+                                                     Command="{Binding DataContext.MoreToolsCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorLevel=1, AncestorType={x:Type Window}}}"/>
+                                        <ctrllib.controls:ModernRadioButton Content="Service Test" MinWidth="80" Height="32" Style="{DynamicResource Style.App.RadioButton.Normal}"
+                                                     Command="{Binding DataContext.ServiceStartTestCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorLevel=1, AncestorType={x:Type Window}}}"/>
                                     </StackPanel>
                                 </Border>
                                 <ContentPresenter Grid.Row="1" Grid.Column="1"/>

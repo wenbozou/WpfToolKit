@@ -1,4 +1,6 @@
-﻿using GalaSoft.MvvmLight.Command;
+﻿using GalaSoft.MvvmLight;
+using GalaSoft.MvvmLight.Command;
+using GalaSoft.MvvmLight.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,9 +9,8 @@ using System.Threading.Tasks;
 
 namespace WpfToolKit.ViewModels
 {
-    public class MainWindowViewModel
+    public class MainWindowViewModel : ViewModelBase
     {
-
         #region 命令
         public RelayCommand<object> MaxNormalWindowCommand => new RelayCommand<object>(MaxNormalWindowCommandImpl);
         private void MaxNormalWindowCommandImpl(object param)
@@ -25,6 +26,7 @@ namespace WpfToolKit.ViewModels
 
         }
         public RelayCommand<object> CloseWindowCommand => new RelayCommand<object>(CloseWindowCommandImpl);
+
         private void CloseWindowCommandImpl(object param)
         {
             App.Current.MainWindow.Close();

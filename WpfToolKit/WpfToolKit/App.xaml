@@ -5,10 +5,12 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
+                
                 <ResourceDictionary Source="pack://application:,,,/WpfToolKit;component/Themes/Colors.xaml"/>
                 <ResourceDictionary Source="pack://application:,,,/WpfToolKit;component/Themes/Asserts/Svgs/GeoPathIcons.xaml"/>
-                <ResourceDictionary Source="pack://application:,,,/WpfToolKit;component/Themes/Asserts/Styles/WindowStyle.xaml"/>
                 <ResourceDictionary Source="pack://application:,,,/WpfToolKit;component/Themes/Asserts/Styles/ButtonStyle.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/WpfToolKit;component/Themes/Asserts/Styles/RadioButtonStyle.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/WpfToolKit;component/Themes/Asserts/Styles/WindowStyle.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

@@ -10,15 +10,19 @@
     Title="MainWindowView"
     WindowStartupLocation="CenterScreen"
     Style="{StaticResource Style.App.Window.Main}"
-    TitleAreaTemplate="{DynamicResource DT.Window.TitleArea}">
+    TitleAreaTemplate="{DynamicResource DT.Window.TitleArea}"
+    PreviewMouseLeftButtonDown="ModernWindow_PreviewMouseLeftButtonDown"
+    PreviewMouseMove="ModernWindow_PreviewMouseMove"
+    PreviewMouseLeftButtonUp="ModernWindow_PreviewMouseLeftButtonUp">
     <ctrllib.controls:ModernWindow.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="pack://application:,,,/WpfToolKit;component/Themes/Asserts/Styles/ButtonStyle.xaml"/>
             </ResourceDictionary.MergedDictionaries>
             <DataTemplate x:Key="DT.Window.TitleArea">
-                <Border>
-                    <Grid>
+                <Border Background="#717FF9"
+                        CornerRadius="10 10 0 0">
+                    <Grid VerticalAlignment="Center">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="Auto"/>
                             <ColumnDefinition Width="*"/>
@@ -44,6 +48,6 @@
         </ResourceDictionary>
     </ctrllib.controls:ModernWindow.Resources>
     <Grid>
-        
+        <Frame />
     </Grid>
 </ctrllib.controls:ModernWindow>
