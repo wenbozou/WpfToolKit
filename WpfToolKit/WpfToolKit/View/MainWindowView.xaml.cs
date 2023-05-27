@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using WpfToolKit.CtrlLib.Controls;
-using WpfToolKit.ViewModels;
+using WpfToolKit.ViewModel;
 
-namespace WpfToolKit.Views
+namespace WpfToolKit.View
 {
     /// <summary>
     /// MainWindowView.xaml 的交互逻辑
@@ -18,7 +18,7 @@ namespace WpfToolKit.Views
         {
             InitializeComponent();
 
-            this.DataContext = new MainWindowViewModel();
+            //this.DataContext = new MainWindowViewModel();
         }
     }
 }

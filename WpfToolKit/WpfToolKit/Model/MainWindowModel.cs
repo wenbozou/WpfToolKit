@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WpfToolKit.Models
+namespace WpfToolKit.Model
 {
     public class MainWindowModel
     {

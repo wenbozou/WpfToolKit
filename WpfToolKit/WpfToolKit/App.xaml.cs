@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
-using WpfToolKit.Views;
+using WpfToolKit.View;
 
 namespace WpfToolKit
 {

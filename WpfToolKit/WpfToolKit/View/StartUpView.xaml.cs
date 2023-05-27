@@ -12,9 +12,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using WpfToolKit.ViewModels;
+using WpfToolKit.ViewModel;
 
-namespace WpfToolKit.Views
+namespace WpfToolKit.View
 {
     /// <summary>
     /// StartUpView.xaml 的交互逻辑

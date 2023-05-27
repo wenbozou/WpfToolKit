@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WpfToolKit.ViewModels
+namespace WpfToolKit.ViewModel
 {
     public class MainWindowViewModel : ViewModelBase
     {

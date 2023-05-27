@@ -1,17 +1,19 @@
-﻿<Application x:Class="WpfToolKit.App"
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:WpfToolKit">
-    <Application.Resources>
-        <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                
-                <ResourceDictionary Source="pack://application:,,,/WpfToolKit;component/Themes/Colors.xaml"/>
-                <ResourceDictionary Source="pack://application:,,,/WpfToolKit;component/Themes/Asserts/Svgs/GeoPathIcons.xaml"/>
-                <ResourceDictionary Source="pack://application:,,,/WpfToolKit;component/Themes/Asserts/Styles/ButtonStyle.xaml"/>
-                <ResourceDictionary Source="pack://application:,,,/WpfToolKit;component/Themes/Asserts/Styles/RadioButtonStyle.xaml"/>
-                <ResourceDictionary Source="pack://application:,,,/WpfToolKit;component/Themes/Asserts/Styles/WindowStyle.xaml"/>
-            </ResourceDictionary.MergedDictionaries>
+<Application x:Class="WpfToolKit.App" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:local="clr-namespace:WpfToolKit" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" d1p1:Ignorable="d" xmlns:d1p1="http://schemas.openxmlformats.org/markup-compatibility/2006">
+  <Application.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/WpfToolKit;component/Themes/Colors.xaml">
         </ResourceDictionary>
-    </Application.Resources>
+        <ResourceDictionary Source="pack://application:,,,/WpfToolKit;component/Themes/Asserts/Svgs/GeoPathIcons.xaml">
+        </ResourceDictionary>
+        <ResourceDictionary Source="pack://application:,,,/WpfToolKit;component/Themes/Asserts/Styles/ButtonStyle.xaml">
+        </ResourceDictionary>
+        <ResourceDictionary Source="pack://application:,,,/WpfToolKit;component/Themes/Asserts/Styles/RadioButtonStyle.xaml">
+        </ResourceDictionary>
+        <ResourceDictionary Source="pack://application:,,,/WpfToolKit;component/Themes/Asserts/Styles/WindowStyle.xaml">
+          <vm:ViewModelLocator x:Key="Locator" d:IsDataSource="True" xmlns:vm="clr-namespace:WpfToolKit.ViewModel" />
+        </ResourceDictionary>
+      </ResourceDictionary.MergedDictionaries>
+    </ResourceDictionary>
+  </Application.Resources>
 </Application>
