@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
+using WpfToolKit.Views;
 
 namespace WpfToolKit
 {
@@ -13,5 +15,37 @@ namespace WpfToolKit
     /// </summary>
     public partial class App : Application
     {
+        #region 字段
+        private AutoResetEvent autoReset = new AutoResetEvent(false);
+        #endregion
+
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            base.OnStartup(e);
+
+            Window startupWin = new StartUpView();
+            this.MainWindow = startupWin;
+            startupWin.Show();
+        }
+
+        protected override void OnSessionEnding(SessionEndingCancelEventArgs e)
+        {
+            base.OnSessionEnding(e);
+        }
+
+        protected override void OnExit(ExitEventArgs e)
+        {
+            base.OnExit(e);
+        }
+
+        protected override void OnActivated(EventArgs e)
+        {
+            base.OnActivated(e);
+        }
+
+        protected override void OnDeactivated(EventArgs e)
+        {
+            base.OnDeactivated(e);
+        }
     }
 }
