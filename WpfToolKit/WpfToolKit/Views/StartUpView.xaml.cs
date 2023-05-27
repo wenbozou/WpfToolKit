@@ -21,6 +21,13 @@ namespace WpfToolKit.Views
     /// </summary>
     public partial class StartUpView : Window
     {
+
+        private AutoResetEvent _AutoReset = new AutoResetEvent(false);
+        public AutoResetEvent AutoReset
+        {
+            get { return _AutoReset; }
+        }
+
         public StartUpView()
         {
             InitializeComponent();
@@ -28,12 +35,12 @@ namespace WpfToolKit.Views
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            AutoResetEvent autoReset = new AutoResetEvent(false);
-            _ = Task.Run(() => {
-                Thread.Sleep(4000);
+            Window mainWin = new MainWindowView();
 
+            _ = Task.Run(() => {
+                AutoReset.WaitOne();
+                Thread.Sleep(2000);
                 Dispatcher.Invoke(() => {
-                    Window mainWin = new MainWindowView();
                     App.Current.MainWindow = mainWin;
                     this.Close();
                     mainWin.Show();

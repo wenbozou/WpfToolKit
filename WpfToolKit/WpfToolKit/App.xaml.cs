@@ -23,9 +23,18 @@ namespace WpfToolKit
         {
             base.OnStartup(e);
 
-            Window startupWin = new StartUpView();
+            #region 显示启动页
+            StartUpView startupWin = new StartUpView();
             this.MainWindow = startupWin;
             startupWin.Show();
+            #endregion
+
+            #region 初始化工作
+            #endregion
+
+            #region 自动关闭启动页，并显示主窗口
+            startupWin.AutoReset.Set();
+            #endregion
         }
 
         protected override void OnSessionEnding(SessionEndingCancelEventArgs e)
