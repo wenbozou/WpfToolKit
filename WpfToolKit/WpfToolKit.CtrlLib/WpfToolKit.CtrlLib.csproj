@@ -52,6 +52,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Compile Include="Controls\ModernButton.cs" />
+    <Compile Include="Controls\ModernWindow.cs" />
     <Compile Include="CustomControl1.cs">
       <SubType>Code</SubType>
     </Compile>

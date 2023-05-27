@@ -1,13 +1,49 @@
-﻿<Window x:Class="WpfToolKit.Views.MainWindowView"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:WpfToolKit"
-        mc:Ignorable="d"
-        Title="MainWindowView" Height="660" Width="1100"
-        WindowStartupLocation="CenterScreen">
+﻿<ctrllib.controls:ModernWindow 
+    x:Class="WpfToolKit.Views.MainWindowView"
+    xmlns:ctrllib.controls="clr-namespace:WpfToolKit.CtrlLib.Controls;assembly=WpfToolKit.CtrlLib"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:WpfToolKit"
+    mc:Ignorable="d"
+    Title="MainWindowView"
+    WindowStartupLocation="CenterScreen"
+    Style="{StaticResource Style.App.Window.Main}"
+    TitleAreaTemplate="{DynamicResource DT.Window.TitleArea}">
+    <ctrllib.controls:ModernWindow.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/WpfToolKit;component/Themes/Asserts/Styles/ButtonStyle.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            <DataTemplate x:Key="DT.Window.TitleArea">
+                <Border>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="WpfToolKit" Margin="10"/>
+                        <StackPanel Orientation="Horizontal" Grid.Column="2" Margin="0 0 20 0">
+                            <ctrllib.controls:ModernButton 
+                                Width="24" Height="24" 
+                                Margin="0 0 6 0"
+                                Style="{StaticResource Style.App.Button.Close}"
+                                Tag="{DynamicResource PathGeo.Btn.Max}"
+                                Command="{Binding DataContext.MaxNormalWindowCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorLevel=1, AncestorType={x:Type ctrllib.controls:ModernWindow}}}"/>
+                            <ctrllib.controls:ModernButton 
+                                Width="24" Height="24" 
+                                Style="{StaticResource Style.App.Button.Close}"
+                                Tag="{DynamicResource PathGeo.Btn.Close}"
+                                Command="{Binding DataContext.CloseWindowCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorLevel=1, AncestorType={x:Type ctrllib.controls:ModernWindow}}}"/>
+                        </StackPanel>
+                    </Grid>
+                </Border>
+            </DataTemplate>
+        </ResourceDictionary>
+    </ctrllib.controls:ModernWindow.Resources>
     <Grid>
         
     </Grid>
-</Window>
+</ctrllib.controls:ModernWindow>
