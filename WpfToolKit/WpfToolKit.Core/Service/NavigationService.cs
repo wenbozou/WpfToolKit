@@ -51,7 +51,7 @@ namespace WpfToolKit.Core.Service
 
         public void NavigateTo(string pageKey)
         {
-            NavigateTo(pageKey, "Back");
+            NavigateTo(pageKey, "Next");
         }
 
         public void NavigateTo(string pageKey, object parameter)
@@ -64,17 +64,16 @@ namespace WpfToolKit.Core.Service
                 }
 
                 var frame = GetChildElementFromName(Application.Current.MainWindow, "MainFrame") as Frame;
-                if (null != frame)
+                if (null != frame && CurrentPageKey != pageKey)
                 {
                     frame.Source = _dicPageByKey[pageKey];
+                    Parameter = parameter;
+                    if (parameter.ToString().Equals("Next"))
+                    {
+                        _lstHistoric.Add(pageKey);
+                    }
+                    CurrentPageKey = pageKey;
                 }
-
-                Parameter = parameter;
-                if (parameter.ToString().Equals("Next"))
-                {
-                    _lstHistoric.Add(pageKey);
-                }
-                CurrentPageKey = pageKey;
             }
         }
 
