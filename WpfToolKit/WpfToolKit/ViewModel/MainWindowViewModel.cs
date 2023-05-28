@@ -1,5 +1,6 @@
 ﻿using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
+using GalaSoft.MvvmLight.Threading;
 using GalaSoft.MvvmLight.Views;
 using System;
 using System.Collections.Generic;
@@ -53,6 +54,15 @@ namespace WpfToolKit.ViewModel
         private void CloseWindowCommandImpl(object param)
         {
             App.Current.MainWindow.Close();
+        }
+
+
+        public RelayCommand<object> MoreToolCommand => new RelayCommand<object>(MoreToolCommandImpl);
+
+        private void MoreToolCommandImpl(object param)
+        {
+            var navigationService = CommonServiceLocator.ServiceLocator.Current.GetInstance<INavigationService>();
+            navigationService.NavigateTo("toolPanel");
         }
         #endregion
     }

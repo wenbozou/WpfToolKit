@@ -15,6 +15,10 @@
 using CommonServiceLocator;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Ioc;
+using GalaSoft.MvvmLight.Views;
+using System;
+using WpfToolKit.Core.Service;
+using WpfToolKit.ViewModel.MoreTool;
 
 namespace WpfToolKit.ViewModel
 {
@@ -44,9 +48,22 @@ namespace WpfToolKit.ViewModel
 
             SimpleIoc.Default.Register<MainWindowViewModel>();
             SimpleIoc.Default.Register<StartUpViewModel>();
+            SimpleIoc.Default.Register<ToolPanelViewModel>();
+
+            var navigationService = this.CreateNavigationService();
+            SimpleIoc.Default.Register<INavigationService>(()=> navigationService);
         }
 
-        public MainWindowViewModel Main
+        private INavigationService CreateNavigationService()
+        {
+            var navigationService = new NavigationService();
+
+            navigationService.Configure("toolPanel", new System.Uri("/WpfToolKit;component/View/MoreTool/ToolPanelView.xaml", UriKind.Relative));
+
+            return navigationService;
+        }
+
+        public MainWindowViewModel MainVm
         {
             get
             {
@@ -54,13 +71,22 @@ namespace WpfToolKit.ViewModel
             }
         }
 
-        public StartUpViewModel Startup
+        public StartUpViewModel StartupVm
         {
             get
             {
                 return ServiceLocator.Current.GetInstance<StartUpViewModel>();
             }
         }
+
+        public ToolPanelViewModel ToolPanelVm
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<ToolPanelViewModel>();
+            }
+        }
+
 
         public static void Cleanup()
         {

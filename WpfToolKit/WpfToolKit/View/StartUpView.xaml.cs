@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GalaSoft.MvvmLight.Threading;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -40,7 +41,9 @@ namespace WpfToolKit.View
             _ = Task.Run(() => {
                 AutoReset.WaitOne();
                 Thread.Sleep(2000);
-                Dispatcher.Invoke(() => {
+                
+                DispatcherHelper.UIDispatcher.Invoke(()=> {
+                //Dispatcher.Invoke(() => {
                     App.Current.MainWindow = mainWin;
                     this.Close();
                     mainWin.Show();

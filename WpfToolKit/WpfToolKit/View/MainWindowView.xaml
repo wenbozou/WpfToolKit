@@ -12,7 +12,7 @@
     Style="{StaticResource Style.App.Window.Main}"
     TitleAreaTemplate="{DynamicResource DT.Window.TitleArea}"
     MouseMove="ModernWindow_MouseMove"
-    DataContext="{Binding Source={StaticResource Locator}, Path=Main}">
+    DataContext="{Binding Source={StaticResource Locator}, Path=MainVm}">
     <ctrllib.controls:ModernWindow.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -54,6 +54,6 @@
         </ResourceDictionary>
     </ctrllib.controls:ModernWindow.Resources>
     <Grid>
-        <Frame />
+        <Frame x:Name="MainFrame"/>
     </Grid>
 </ctrllib.controls:ModernWindow>

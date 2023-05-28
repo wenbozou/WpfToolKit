@@ -60,7 +60,7 @@
                                         <ctrllib.controls:ModernRadioButton Content="Moudle2" MinWidth="80" Height="32" Style="{DynamicResource Style.App.RadioButton.Normal}"/>
                                         <ctrllib.controls:ModernRadioButton Content="Moudle3" MinWidth="80" Height="32" Style="{DynamicResource Style.App.RadioButton.Normal}"/>
                                         <ctrllib.controls:ModernRadioButton Content="MoreTools" MinWidth="80" Height="32" Style="{DynamicResource Style.App.RadioButton.Normal}"
-                                                     Command="{Binding DataContext.MoreToolsCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorLevel=1, AncestorType={x:Type Window}}}"/>
+                                                     Command="{Binding DataContext.MoreToolCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorLevel=1, AncestorType={x:Type Window}}}"/>
                                         <ctrllib.controls:ModernRadioButton Content="Service Test" MinWidth="80" Height="32" Style="{DynamicResource Style.App.RadioButton.Normal}"
                                                      Command="{Binding DataContext.ServiceStartTestCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorLevel=1, AncestorType={x:Type Window}}}"/>
                                     </StackPanel>

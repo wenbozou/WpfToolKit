@@ -8,7 +8,7 @@
         Title="StartUpView" Height="450" Width="800"
         WindowStartupLocation="CenterScreen"
         Loaded="Window_Loaded"
-        DataContext="{Binding Source={StaticResource Locator}, Path=Startup}">
+        DataContext="{Binding Source={StaticResource Locator}, Path=StartupVm}">
     <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
         <TextBlock Text="{Binding Introduce}"/>
     </Grid>

@@ -72,10 +72,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ViewModel\MoreTool\ToolPanelViewModel.cs" />
     <Compile Include="ViewModel\StartUpViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
     <Compile Include="View\StartUpView.xaml.cs">
       <DependentUpon>StartUpView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MoreTool\ToolPanelView.xaml.cs">
+      <DependentUpon>ToolPanelView.xaml</DependentUpon>
     </Compile>
     <Page Include="Themes\Asserts\Styles\ButtonStyle.xaml">
       <SubType>Designer</SubType>
@@ -115,6 +119,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\MoreTool\ToolPanelView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -144,6 +152,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\WpfToolKit.Core\WpfToolKit.Core.csproj">
+      <Project>{c6f9aa53-e353-402e-a0cc-593baaabe1c4}</Project>
+      <Name>WpfToolKit.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\WpfToolKit.CtrlLib\WpfToolKit.CtrlLib.csproj">
       <Project>{0a3ac76e-620d-48cd-b127-8b5faacf299c}</Project>
       <Name>WpfToolKit.CtrlLib</Name>

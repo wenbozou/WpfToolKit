@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GalaSoft.MvvmLight.Threading;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -22,6 +23,10 @@ namespace WpfToolKit
         protected override void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);
+
+            #region 初始化 DispatcherHelper
+            DispatcherHelper.Initialize();
+            #endregion
 
             #region 显示启动页
             StartUpView startupWin = new StartUpView();
