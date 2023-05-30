@@ -18,7 +18,7 @@ namespace WpfToolKit.CtrlLib.Controls
             set { SetValue(TitleAreaTemplateProperty, value); }
         }
 
-        public static readonly DependencyProperty TitleAreaHeightProperty = DependencyProperty.Register("TitleAreaHeight", typeof(int), typeof(ModernWindow), new PropertyMetadata(58));
+        public static readonly DependencyProperty TitleAreaHeightProperty = DependencyProperty.Register("TitleAreaHeight", typeof(int), typeof(ModernWindow), new PropertyMetadata(0));
         public int TitleAreaHeight
         {
             get { return (int)GetValue(TitleAreaHeightProperty); }
@@ -32,7 +32,7 @@ namespace WpfToolKit.CtrlLib.Controls
             if (e.Source is ModernWindow && e.LeftButton == MouseButtonState.Pressed)
             {
                 Point pt = e.GetPosition(e.Source as ModernWindow);
-                if (pt.Y >= 60)
+                if (pt.Y >= TitleAreaHeight)
                 {
                     return;
                 }

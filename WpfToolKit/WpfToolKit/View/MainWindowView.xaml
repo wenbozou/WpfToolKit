@@ -11,6 +11,7 @@
     WindowStartupLocation="CenterScreen"
     Style="{StaticResource Style.App.Window.Main}"
     TitleAreaTemplate="{DynamicResource DT.Window.TitleArea}"
+    TitleAreaHeight="60"
     MouseMove="ModernWindow_MouseMove"
     DataContext="{Binding Source={StaticResource Locator}, Path=MainVm}">
     <ctrllib.controls:ModernWindow.Resources>
@@ -20,7 +21,8 @@
             </ResourceDictionary.MergedDictionaries>
             <DataTemplate x:Key="DT.Window.TitleArea">
                 <Border Background="#717FF9"
-                        CornerRadius="10 10 0 0">
+                        CornerRadius="10 10 0 0"
+                        Height="{Binding TitleAreaHeight, RelativeSource={RelativeSource Mode=FindAncestor, AncestorLevel=1, AncestorType={x:Type ctrllib.controls:ModernWindow}}}">
                     <Grid VerticalAlignment="Center">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="Auto"/>
