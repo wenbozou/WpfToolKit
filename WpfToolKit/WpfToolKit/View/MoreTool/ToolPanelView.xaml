@@ -9,5 +9,24 @@
              DataContext="{Binding Source={StaticResource Locator}, Path=ToolPanelVm}">
     <Grid>
         <TextBlock Text="{Binding Introduce}"/>
+        <TextBlock
+            Margin="0,50,0,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+                                FontWeight="Bold"
+                                LineHeight="14"
+                                Text="{Binding Introduce}"
+                                TextAlignment="Center"
+                                TextWrapping="Wrap" />
+        <Border Margin="0 100 0 0" Width="100" Height="100" Background="White">
+            <Border.Effect>
+                <DropShadowEffect Color="Black" Opacity="0.12" Direction="0" ShadowDepth="0" BlurRadius="10"/>
+            </Border.Effect>
+            <Grid>
+                <TextBlock Text="hellow World"/>
+            </Grid>
+        </Border>
+                
+                                
     </Grid>
 </UserControl>

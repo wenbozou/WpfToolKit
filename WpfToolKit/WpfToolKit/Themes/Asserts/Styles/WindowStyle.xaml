@@ -2,12 +2,12 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:WpfToolKit.Themes.Asserts.Styles"
                     xmlns:shell="http://schemas.microsoft.com/winfx/2006/xaml/presentation/shell"
-                    xmlns:ctrllib.controls="clr-namespace:WpfToolKit.CtrlLib.Controls;assembly=WpfToolKit.CtrlLib">
+                    xmlns:ui.controls="clr-namespace:WpfToolKit.UI.Controls;assembly=WpfToolKit.UI">
     <ResourceDictionary.MergedDictionaries>
         
     </ResourceDictionary.MergedDictionaries>
 
-    <Style x:Key="Style.App.Window.Main" TargetType="{x:Type ctrllib.controls:ModernWindow}">
+    <Style x:Key="Style.App.Window.Main" TargetType="{x:Type ui.controls:ModernWindow}">
         <Setter Property="Height" Value="700"/>
         <Setter Property="Width" Value="1100"/>
         <Setter Property="Background" Value="White"/>
@@ -24,7 +24,7 @@
         <Setter Property="IsTabStop" Value="False"/>
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="{x:Type ctrllib.controls:ModernWindow}">
+                <ControlTemplate TargetType="{x:Type ui.controls:ModernWindow}">
                     <Border 
                         Background="{TemplateBinding Background}" 
                         CornerRadius="10" 
@@ -55,12 +55,12 @@
                                         CornerRadius="0 0 0 10"
                                         Width="120">
                                     <StackPanel Orientation="Vertical" >
-                                        <ctrllib.controls:ModernRadioButton Content="Moudle1" MinWidth="80" Height="32" Style="{DynamicResource Style.App.RadioButton.Normal}"/>
-                                        <ctrllib.controls:ModernRadioButton Content="Moudle2" MinWidth="80" Height="32" Style="{DynamicResource Style.App.RadioButton.Normal}"/>
-                                        <ctrllib.controls:ModernRadioButton Content="Moudle3" MinWidth="80" Height="32" Style="{DynamicResource Style.App.RadioButton.Normal}"/>
-                                        <ctrllib.controls:ModernRadioButton Content="MoreTools" MinWidth="80" Height="32" Style="{DynamicResource Style.App.RadioButton.Normal}"
+                                        <ui.controls:ModernRadioButton Content="Moudle1" MinWidth="80" Height="32" Style="{DynamicResource Style.App.RadioButton.Normal}"/>
+                                        <ui.controls:ModernRadioButton Content="Moudle2" MinWidth="80" Height="32" Style="{DynamicResource Style.App.RadioButton.Normal}"/>
+                                        <ui.controls:ModernRadioButton Content="Moudle3" MinWidth="80" Height="32" Style="{DynamicResource Style.App.RadioButton.Normal}"/>
+                                        <ui.controls:ModernRadioButton Content="MoreTools" MinWidth="80" Height="32" Style="{DynamicResource Style.App.RadioButton.Normal}"
                                                      Command="{Binding DataContext.MoreToolCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorLevel=1, AncestorType={x:Type Window}}}"/>
-                                        <ctrllib.controls:ModernRadioButton Content="Service Test" MinWidth="80" Height="32" Style="{DynamicResource Style.App.RadioButton.Normal}"
+                                        <ui.controls:ModernRadioButton Content="Service Test" MinWidth="80" Height="32" Style="{DynamicResource Style.App.RadioButton.Normal}"
                                                      Command="{Binding DataContext.ServiceStartTestCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorLevel=1, AncestorType={x:Type Window}}}"/>
                                     </StackPanel>
                                 </Border>

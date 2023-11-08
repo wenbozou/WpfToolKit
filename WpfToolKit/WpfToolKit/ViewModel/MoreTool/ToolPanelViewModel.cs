@@ -9,7 +9,7 @@ namespace WpfToolKit.ViewModel.MoreTool
 {
     public class ToolPanelViewModel : ViewModelBase
     {
-        private string _Introduce = "Hello, My Name is ToolPanel";
+        private string _Introduce = "Enregistrements \r de \r sauvegarde";//"Hello, \r My \r Name \r is \r ToolPanel";
 
         public string Introduce
         {

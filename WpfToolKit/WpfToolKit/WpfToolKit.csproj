@@ -156,9 +156,9 @@
       <Project>{c6f9aa53-e353-402e-a0cc-593baaabe1c4}</Project>
       <Name>WpfToolKit.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\WpfToolKit.CtrlLib\WpfToolKit.CtrlLib.csproj">
-      <Project>{0a3ac76e-620d-48cd-b127-8b5faacf299c}</Project>
-      <Name>WpfToolKit.CtrlLib</Name>
+    <ProjectReference Include="..\WpfToolKit.UI\WpfToolKit.UI.csproj">
+      <Project>{df4ae623-18ad-420b-8aa7-eabff79e149a}</Project>
+      <Name>WpfToolKit.UI</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

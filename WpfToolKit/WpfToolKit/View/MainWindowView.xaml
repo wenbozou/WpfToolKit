@@ -1,6 +1,6 @@
-﻿<ctrllib.controls:ModernWindow 
+﻿<ui.controls:ModernWindow 
     x:Class="WpfToolKit.View.MainWindowView"
-    xmlns:ctrllib.controls="clr-namespace:WpfToolKit.CtrlLib.Controls;assembly=WpfToolKit.CtrlLib"
+    xmlns:ui.controls="clr-namespace:WpfToolKit.UI.Controls;assembly=WpfToolKit.UI"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -14,48 +14,50 @@
     TitleAreaHeight="60"
     MouseMove="ModernWindow_MouseMove"
     DataContext="{Binding Source={StaticResource Locator}, Path=MainVm}">
-    <ctrllib.controls:ModernWindow.Resources>
+    <ui.controls:ModernWindow.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="pack://application:,,,/WpfToolKit;component/Themes/Asserts/Styles/ButtonStyle.xaml"/>
             </ResourceDictionary.MergedDictionaries>
             <DataTemplate x:Key="DT.Window.TitleArea">
-                <Border Background="#717FF9"
+                <Grid>
+                    <Border Background="#717FF9"
                         CornerRadius="10 10 0 0"
-                        Height="{Binding TitleAreaHeight, RelativeSource={RelativeSource Mode=FindAncestor, AncestorLevel=1, AncestorType={x:Type ctrllib.controls:ModernWindow}}}">
+                        Height="{Binding TitleAreaHeight, RelativeSource={RelativeSource Mode=FindAncestor, AncestorLevel=1, AncestorType={x:Type ui.controls:ModernWindow}}}">
+                    </Border>
                     <Grid VerticalAlignment="Center">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="Auto"/>
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="Auto"/>
                         </Grid.ColumnDefinitions>
-                        <TextBlock Text="{Binding DataContext.ProductName, RelativeSource={RelativeSource Mode=FindAncestor, AncestorLevel=1, AncestorType={x:Type ctrllib.controls:ModernWindow}}}"
+                        <TextBlock Text="{Binding DataContext.ProductName, RelativeSource={RelativeSource Mode=FindAncestor, AncestorLevel=1, AncestorType={x:Type ui.controls:ModernWindow}}}"
                                    Margin="10"/>
                         <StackPanel Orientation="Horizontal" Grid.Column="2" Margin="0 0 20 0">
-                            <ctrllib.controls:ModernButton 
+                            <ui.controls:ModernButton 
                                 Width="24" Height="24" 
                                 Margin="0 0 6 0"
                                 Style="{StaticResource Style.App.Button.Close}"
                                 Tag="{DynamicResource PathGeo.App.Btn.Min}"
-                                Command="{Binding DataContext.MinWindowCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorLevel=1, AncestorType={x:Type ctrllib.controls:ModernWindow}}}"/>
-                            <ctrllib.controls:ModernButton 
+                                Command="{Binding DataContext.MinWindowCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorLevel=1, AncestorType={x:Type ui.controls:ModernWindow}}}"/>
+                            <ui.controls:ModernButton 
                                 Width="24" Height="24" 
                                 Margin="0 0 6 0"
                                 Style="{StaticResource Style.App.Button.Close}"
                                 Tag="{DynamicResource PathGeo.App.Btn.Max}"
-                                Command="{Binding DataContext.MaxNormalWindowCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorLevel=1, AncestorType={x:Type ctrllib.controls:ModernWindow}}}"/>
-                            <ctrllib.controls:ModernButton 
+                                Command="{Binding DataContext.MaxNormalWindowCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorLevel=1, AncestorType={x:Type ui.controls:ModernWindow}}}"/>
+                            <ui.controls:ModernButton 
                                 Width="24" Height="24" 
                                 Style="{StaticResource Style.App.Button.Close}"
                                 Tag="{DynamicResource PathGeo.App.Btn.Close}"
-                                Command="{Binding DataContext.CloseWindowCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorLevel=1, AncestorType={x:Type ctrllib.controls:ModernWindow}}}"/>
+                                Command="{Binding DataContext.CloseWindowCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorLevel=1, AncestorType={x:Type ui.controls:ModernWindow}}}"/>
                         </StackPanel>
                     </Grid>
-                </Border>
+                </Grid>
             </DataTemplate>
         </ResourceDictionary>
-    </ctrllib.controls:ModernWindow.Resources>
+    </ui.controls:ModernWindow.Resources>
     <Grid>
         <Frame x:Name="MainFrame"/>
     </Grid>
-</ctrllib.controls:ModernWindow>
+</ui.controls:ModernWindow>

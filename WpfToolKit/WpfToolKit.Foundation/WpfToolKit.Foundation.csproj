@@ -42,6 +42,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Interface\ILog.cs" />
+    <Compile Include="Interface\IProcessor.cs" />
+    <Compile Include="Interface\IProgress.cs" />
     <Compile Include="Interface\IRegistryService.cs" />
     <Compile Include="Model\RegistryRootKey.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

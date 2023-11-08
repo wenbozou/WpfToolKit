@@ -4,7 +4,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using WpfToolKit.CtrlLib.Controls;
+using WpfToolKit.UI.Controls;
 using WpfToolKit.ViewModel;
 
 namespace WpfToolKit.View
